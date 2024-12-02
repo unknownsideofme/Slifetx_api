@@ -126,6 +126,6 @@ async def verify_title(request: TitleRequest):
     return json.dumps(response['answer'])
 # Run the app with uvicorn
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5900))
+    port = os.getenv("PORT")
     
     uvicorn.run(app, host="0.0.0.0", port=port)
